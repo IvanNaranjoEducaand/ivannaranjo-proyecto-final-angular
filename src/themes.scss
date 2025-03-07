@@ -1,0 +1,41 @@
+// Definición de colores
+$primary-light: #1976D2;
+$secondary-light: #424242;
+$tertiary-light: #FFC107;
+
+$primary-dark: #6e00f5;
+$secondary-dark: #03DAC6;
+$tertiary-dark: #CF6679;
+
+// Mapa de temas
+$light-theme: (
+  primary: $primary-light,
+  secondary: $secondary-light,
+  tertiary: $tertiary-light,
+  background: #FFFFFF,
+  text: #212121
+);
+
+$dark-theme: (
+  primary: $primary-dark,
+  secondary: $secondary-dark,
+  tertiary: $tertiary-dark,
+  background: #121212,
+  text: #E0E0E0
+);
+
+// Mixin para aplicar el tema
+@mixin data-theme($theme) {
+  @each $key, $value in $theme {
+    --#{$key}: #{$value};
+  }
+}
+
+// Aplicación de temas
+.light-theme {
+  @include data-theme($light-theme);
+}
+
+.dark-theme {
+  @include data-theme($dark-theme);
+}
