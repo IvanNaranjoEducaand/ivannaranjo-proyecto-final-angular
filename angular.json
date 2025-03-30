@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ivannaranjo-proyecto-final-angular": {
+    "tfg-beat-on-src-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ivannaranjo-proyecto-final-angular",
+            "outputPath": "dist/tfg-beat-on-src-angular",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -32,9 +32,7 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/cyan-orange.css",
-              "src/styles.scss",
-              "src/themes.scss"
+              "src/styles.scss"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -69,12 +67,18 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "tfg-beat-on-src-angular:build",
+            "host": "0.0.0.0",
+            "port": 3000,
+            "disableHostCheck": true
+          },
           "configurations": {
             "production": {
-              "buildTarget": "ivannaranjo-proyecto-final-angular:build:production"
+              "buildTarget": "tfg-beat-on-src-angular:build:production"
             },
             "development": {
-              "buildTarget": "ivannaranjo-proyecto-final-angular:build:development"
+              "buildTarget": "tfg-beat-on-src-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -98,7 +102,6 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/cyan-orange.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -108,6 +111,6 @@
     }
   },
   "cli": {
-    "analytics": "91ac0972-5582-460b-b77f-5202d799d66c"
+    "analytics": false
   }
 }
